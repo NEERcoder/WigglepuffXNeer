@@ -60,7 +60,7 @@ export const PLANETS: Planet[] = [
   },
   {
     id: 4,
-    name: 'Supreme Commander Wigglypuff',
+    name: 'The Cosmic Rebellion',
     emoji: '🚀',
     image: '/memories/wigglypuff.jpg',
     quote: 'Every love story needs a little chaos.',
@@ -113,7 +113,7 @@ export const PLANETS: Planet[] = [
   },
   {
     id: 9,
-    name: 'The Eyes Nebula',
+    name: 'The Galaxy in Your Eyes',
     emoji: '✨',
     image: '/memories/eyes-photo.jpg',
     quote:
