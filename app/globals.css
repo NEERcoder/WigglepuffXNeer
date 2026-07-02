@@ -436,8 +436,365 @@
     inset 0 1px 0 oklch(0.9 0.05 350 / 20%);
 }
 
+/* ===== NEXT-GENERATION CINEMATIC ANIMATIONS ===== */
+
+/* Star dance - twinkling orbital movement */
+@keyframes star-dance {
+  0%, 100% {
+    transform: translateY(0) translateX(0) scale(1) rotate(0deg);
+    opacity: 0.4;
+  }
+  25% {
+    transform: translateY(-30px) translateX(10px) scale(1.3) rotate(90deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-20px) translateX(-15px) scale(1.1) rotate(180deg);
+    opacity: 0.8;
+  }
+  75% {
+    transform: translateY(-35px) translateX(5px) scale(1.2) rotate(270deg);
+    opacity: 0.9;
+  }
+}
+
+/* Memory drift - nostalgic gentle flow */
+@keyframes memory-drift {
+  0% {
+    transform: translateY(100vh) translateX(0) rotate(0deg);
+    opacity: 0;
+    filter: blur(2px);
+  }
+  10% {
+    opacity: 0.7;
+    filter: blur(0px);
+  }
+  30% {
+    transform: translateY(70vh) translateX(20px) rotate(45deg);
+  }
+  50% {
+    transform: translateY(50vh) translateX(-10px) rotate(90deg);
+    opacity: 0.9;
+    filter: blur(0px);
+  }
+  70% {
+    transform: translateY(30vh) translateX(15px) rotate(135deg);
+  }
+  90% {
+    opacity: 0.6;
+    filter: blur(1px);
+  }
+  100% {
+    transform: translateY(-10vh) translateX(-20px) rotate(180deg);
+    opacity: 0;
+    filter: blur(3px);
+  }
+}
+
+/* Chaos burst - playful explosive movement */
+@keyframes chaos-burst {
+  0% {
+    transform: translate(0, 0) scale(0) rotate(0deg);
+    opacity: 1;
+  }
+  20% {
+    transform: translate(var(--tx, 100px), var(--ty, -50px)) scale(1.5) rotate(180deg);
+    opacity: 0.9;
+  }
+  40% {
+    transform: translate(calc(var(--tx, 100px) * -0.5), calc(var(--ty, -50px) * 1.5)) scale(0.8) rotate(360deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(var(--tx, 100px), var(--ty, 100px)) scale(0) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* Heart pulse - deep emotional throb */
+@keyframes heart-pulse {
+  0%, 100% {
+    transform: translateY(100vh) scale(0.3) rotate(var(--initial-rotation, 0deg));
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.8;
+    transform: translateY(95vh) scale(0.6);
+  }
+  15% {
+    transform: translateY(85vh) scale(1.2) rotate(calc(var(--initial-rotation, 0deg) + 45deg));
+    opacity: 1;
+  }
+  30% {
+    transform: translateY(65vh) scale(0.9);
+    opacity: 0.85;
+  }
+  45% {
+    transform: translateY(50vh) scale(1.15) rotate(calc(var(--initial-rotation, 0deg) + 90deg));
+    opacity: 0.95;
+  }
+  60% {
+    transform: translateY(35vh) scale(1);
+  }
+  75% {
+    transform: translateY(20vh) scale(0.85);
+    opacity: 0.6;
+  }
+  90% {
+    transform: translateY(5vh) scale(0.6) rotate(calc(var(--initial-rotation, 0deg) + 180deg));
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-10vh) scale(0.3);
+    opacity: 0;
+  }
+}
+
+/* Soulful rain - melancholic tear drops */
+@keyframes soulful-rain {
+  0% {
+    transform: translateY(-10vh) translateX(0) scaleY(0.2) scaleX(1);
+    opacity: 0;
+    filter: blur(0px);
+  }
+  5% {
+    opacity: 0.6;
+    transform: scaleY(1) scaleX(1);
+  }
+  20% {
+    transform: translateY(15vh) translateX(5px) scaleY(1.1) scaleX(0.95);
+    opacity: 0.75;
+  }
+  40% {
+    transform: translateY(35vh) translateX(-8px) scaleY(1.05);
+    opacity: 0.65;
+  }
+  60% {
+    transform: translateY(55vh) translateX(3px) scaleY(1.1) scaleX(0.9);
+    opacity: 0.55;
+  }
+  80% {
+    transform: translateY(85vh) translateX(-5px) scaleY(0.9);
+    opacity: 0.35;
+    filter: blur(1px);
+  }
+  100% {
+    transform: translateY(105vh) translateX(0) scaleY(0.5) scaleX(0.8);
+    opacity: 0;
+    filter: blur(2px);
+  }
+}
+
+/* Photo reveal - cinematic flash reveal */
+@keyframes photo-reveal {
+  0%, 100% {
+    transform: translateY(100vh) scale(0.5);
+    opacity: 0;
+    filter: blur(10px) sepia(0.5);
+  }
+  5% {
+    opacity: 0.3;
+    filter: blur(8px) sepia(0.3);
+  }
+  10% {
+    opacity: 0.9;
+    transform: translateY(90vh) scale(0.8);
+    filter: blur(0px) sepia(0) brightness(1.3);
+  }
+  15% {
+    filter: blur(0px) sepia(0) brightness(1);
+  }
+  50% {
+    transform: translateY(50vh) scale(1);
+    opacity: 0.85;
+    filter: blur(0px);
+  }
+  85% {
+    opacity: 0.5;
+    filter: blur(1px);
+  }
+  100% {
+    transform: translateY(-10vh) scale(1.1);
+    opacity: 0;
+    filter: blur(5px) sepia(0.2);
+  }
+}
+
+/* Nebula cosmic - ethereal space dust */
+@keyframes nebula-cosmic {
+  0% {
+    transform: translateY(100vh) translateX(0) scale(0.2) rotate(0deg);
+    opacity: 0;
+    filter: blur(6px) hue-rotate(0deg);
+  }
+  10% {
+    opacity: 0.7;
+    filter: blur(3px) hue-rotate(15deg);
+  }
+  25% {
+    transform: translateY(75vh) translateX(30px) scale(0.6) rotate(90deg);
+    filter: blur(2px) hue-rotate(30deg);
+  }
+  50% {
+    transform: translateY(50vh) translateX(-20px) scale(1) rotate(180deg);
+    opacity: 0.9;
+    filter: blur(0px) hue-rotate(0deg);
+  }
+  75% {
+    transform: translateY(25vh) translateX(25px) scale(0.7) rotate(270deg);
+    filter: blur(2px) hue-rotate(-30deg);
+  }
+  90% {
+    opacity: 0.5;
+    filter: blur(4px) hue-rotate(-15deg);
+  }
+  100% {
+    transform: translateY(-10vh) translateX(-30px) scale(0.4) rotate(360deg);
+    opacity: 0;
+    filter: blur(8px) hue-rotate(0deg);
+  }
+}
+
+/* Finale explosion - grand celebration */
+@keyframes finale-explosion {
+  0% {
+    transform: translateY(100vh) translateX(0) scale(0.2) rotate(0deg);
+    opacity: 0;
+    filter: blur(4px);
+  }
+  5% {
+    opacity: 0.9;
+    transform: translateY(90vh) scale(0.5);
+    filter: blur(0px);
+  }
+  15% {
+    transform: translateY(70vh) translateX(var(--tx, 30px)) scale(1.2) rotate(90deg);
+    opacity: 1;
+  }
+  30% {
+    transform: translateY(50vh) translateX(calc(var(--tx, 30px) * -1)) scale(0.9) rotate(180deg);
+  }
+  50% {
+    transform: translateY(35vh) translateX(calc(var(--tx, 30px) * 0.5)) scale(1.1) rotate(270deg);
+    opacity: 0.85;
+  }
+  70% {
+    transform: translateY(20vh) translateX(calc(var(--tx, 30px) * -0.5)) scale(0.8) rotate(360deg);
+    opacity: 0.6;
+  }
+  85% {
+    transform: translateY(10vh) translateX(0) scale(0.5) rotate(450deg);
+    opacity: 0.3;
+    filter: blur(2px);
+  }
+  100% {
+    transform: translateY(-5vh) translateX(var(--tx, 30px)) scale(0.2) rotate(540deg);
+    opacity: 0;
+    filter: blur(6px);
+  }
+}
+
+/* Gentle shimmer - soft text glow */
+@keyframes gentle-shimmer {
+  0%, 100% {
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+    opacity: 0.6;
+  }
+  50% {
+    text-shadow: 0 0 20px currentColor, 0 0 40px currentColor, 0 0 60px currentColor;
+    opacity: 1;
+  }
+}
+
+/* Pulse subtle - soft breathing */
+@keyframes pulse-subtle {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+/* Float orbit - orbital floating */
+@keyframes float-orbit {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(20px, -20px) rotate(90deg);
+  }
+  50% {
+    transform: translate(0, -30px) rotate(180deg);
+  }
+  75% {
+    transform: translate(-20px, -20px) rotate(270deg);
+  }
+}
+
+/* Glow expand - expanding glow ring */
+@keyframes glow-expand {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px currentColor;
+  }
+  50% {
+    transform: scale(1.5);
+    box-shadow: 0 0 60px currentColor, 0 0 100px currentColor;
+    opacity: 0;
+  }
+}
+
+/* Heart burst - burst hearts outward */
+@keyframes heart-burst {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 1;
+  }
+  30% {
+    transform: scale(1.4) rotate(100deg);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(0.8) translateX(var(--tx, 50px)) rotate(200deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(0) translateX(var(--tx, 100px)) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Utility classes for animations */
+.animate-twinkle {
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+.animate-gentle-shimmer {
+  animation: gentle-shimmer 3s ease-in-out infinite;
+}
+
+.animate-float-orbit {
+  animation: float-orbit 8s ease-in-out infinite;
+}
+
+.animate-glow-expand {
+  animation: glow-expand 2s ease-out infinite;
+}
+
+.animate-heart-burst {
+  animation: heart-burst 1.2s ease-out forwards;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .motion-safe-only {
+  .motion-safe-only,
+  [class*="animate-"] {
     animation: none !important;
   }
 }
