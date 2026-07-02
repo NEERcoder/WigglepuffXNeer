@@ -17,7 +17,7 @@ export function LandingScreen({ onUnlock }: { onUnlock: () => void }) {
     e.preventDefault()
     const guess = value.trim().toLowerCase()
 
-    if (guess === 'wigglypuff') {
+    if (guess === 'wigglepuff') {
       setEasterEgg('You found the secret nickname ❤️')
       setError('')
       return

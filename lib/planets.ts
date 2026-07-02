@@ -135,4 +135,4 @@ export const PLANETS: Planet[] = [
   },
 ]
 
-export const PLANET_PASSWORD = '13082006'
+export const PLANET_PASSWORD = '03072025'
