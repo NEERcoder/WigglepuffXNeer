@@ -721,9 +721,11 @@ export function MusicProvider({ children }: { children: React.ReactNode }) {
     // === PAD CHORD LAYER ===
     const padStops: (() => void)[] = []
 
-    // Main chord with extended voicing
+    // Main chord with extended voicing — store all node references for chord changes
+    const padNodes: ReturnType<typeof createOscillatorWithLFOs>[] = []
+
     theme.chord.forEach((freq, i) => {
-      const result = createOscillatorWithLFOs(
+      const node = createOscillatorWithLFOs(
         ctx,
         freq,
         theme.padWave,
@@ -732,19 +734,17 @@ export function MusicProvider({ children }: { children: React.ReactNode }) {
         padMix,
         i * 0.01
       )
-      padStops.push(result.stop)
+      padNodes.push(node)
+      padStops.push(node.stop)
     })
 
     // Chord progression if available
     if (theme.chordAlt && theme.chordChangeInterval) {
       const changeChord = () => {
         chordIndexRef.current = (chordIndexRef.current + 1) % 2
-        const currentChord = chordIndexRef.current === 0 ? theme.chord : theme.chordAlt
-
-        currentChord.forEach((freq, i) => {
-          if (theme.chord[i] && result.setFrequency) {
-            result.setFrequency(freq)
-          }
+        const nextChord = chordIndexRef.current === 0 ? theme.chord : theme.chordAlt!
+        nextChord.forEach((freq, i) => {
+          if (padNodes[i]) padNodes[i].setFrequency(freq)
         })
       }
       const chordInterval = setInterval(changeChord, theme.chordChangeInterval)
