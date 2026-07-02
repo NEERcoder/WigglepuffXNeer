@@ -60,7 +60,7 @@ export const PLANETS: Planet[] = [
   },
   {
     id: 4,
-    name: 'The Cosmic Rebellion',
+    name: 'Supreme Leader - Wigglepuff',
     emoji: '🚀',
     image: '/memories/wigglypuff.jpg',
     quote: 'Every love story needs a little chaos.',
