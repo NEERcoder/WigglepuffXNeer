@@ -86,27 +86,189 @@
   border: 1px solid oklch(0.85 0.05 320 / 18%);
 }
 
+/* ===== NEXT-LEVEL LOVE-THMED ANIMATIONS ===== */
+
+/* Twinkle with pink/red variant */
 @keyframes twinkle {
-  0%,
-  100% {
-    opacity: 0.3;
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+/* Heartbeat pulse for special elements */
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14% { transform: scale(1.15); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.1); }
+  56% { transform: scale(1); }
+}
+
+/* Soulful float - gentle vertical drift with rotation */
+@keyframes soulful-float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 0.7;
   }
+  25% { transform: translateY(-12px) rotate(3deg) scale(1.02); }
   50% {
+    transform: translateY(-20px) rotate(0deg) scale(1.05);
     opacity: 1;
+  }
+  75% { transform: translateY(-12px) rotate(-3deg) scale(1.02); }
+}
+
+/* Ethereal rose - spiraling float up */
+@keyframes rose-ascent {
+  0% {
+    transform: translateY(100vh) translateX(0) rotate(0deg) scale(0.5);
+    opacity: 0;
+  }
+  10% { opacity: 0.9; }
+  50% { transform: translateY(50vh) translateX(15px) rotate(180deg) scale(1); }
+  90% { opacity: 0.8; }
+  100% {
+    transform: translateY(-5vh) translateX(-15px) rotate(360deg) scale(0.8);
+    opacity: 0;
   }
 }
 
+/* Petal waltz - graceful falling dance */
+@keyframes petal-waltz {
+  0% {
+    transform: translateY(-10vh) translateX(0) rotate(0deg) rotateX(0deg);
+    opacity: 0;
+  }
+  15% { opacity: 1; }
+  33% {
+    transform: translateY(25vh) translateX(25px) rotate(120deg) rotateX(15deg);
+  }
+  66% {
+    transform: translateY(65vh) translateX(-20px) rotate(240deg) rotateX(-15deg);
+  }
+  100% {
+    transform: translateY(105vh) translateX(10px) rotate(360deg) rotateX(0deg);
+    opacity: 0;
+  }
+}
+
+/* Heart bloom - expanding bloom effect */
+@keyframes heart-bloom {
+  0%, 100% {
+    transform: scale(0.8) rotate(0deg);
+    opacity: 0.4;
+    filter: blur(0px);
+  }
+  50% {
+    transform: scale(1.2) rotate(10deg);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+/* Love spark - burst sparkle */
+@keyframes love-spark {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5) rotate(180deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Aurora shimmer - flowing aurora colors */
+@keyframes aurora-shimmer {
+  0%, 100% {
+    background-position: 0% 50%;
+    filter: hue-rotate(0deg);
+    opacity: 0.4;
+  }
+  25% {
+    background-position: 50% 100%;
+    filter: hue-rotate(15deg);
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: hue-rotate(0deg);
+    opacity: 0.6;
+  }
+  75% {
+    background-position: 50% 0%;
+    filter: hue-rotate(-15deg);
+  }
+}
+
+/* Gentle rain - empathic tear drops */
+@keyframes gentle-rain {
+  0% {
+    transform: translateY(-10vh) scaleY(0.3);
+    opacity: 0;
+  }
+  15% { opacity: 0.8; transform: scaleY(1); }
+  85% { opacity: 0.7; }
+  100% {
+    transform: translateY(105vh) scaleY(0.5);
+    opacity: 0;
+  }
+}
+
+/* Ring embrace - interlocking rings */
+@keyframes ring-embrace {
+  0% { transform: rotate(0deg) scale(1); opacity: 0.6; }
+  25% { transform: rotate(90deg) scale(1.1); opacity: 1; }
+  50% { transform: rotate(180deg) scale(1); opacity: 0.8; }
+  75% { transform: rotate(270deg) scale(1.1); opacity: 1; }
+  100% { transform: rotate(360deg) scale(1); opacity: 0.6; }
+}
+
+/* Photo flash - nostalgic capture */
+@keyframes photo-flash {
+  0%, 100% { opacity: 0; transform: scale(0.95); }
+  10% { opacity: 1; transform: scale(1.02); }
+  30% { opacity: 0.3; transform: scale(1); }
+}
+
+/* Nebula swirl - cosmic dust dance */
+@keyframes nebula-swirl {
+  0% {
+    transform: translateY(100vh) scale(0.3) rotate(0deg);
+    opacity: 0;
+    filter: blur(8px);
+  }
+  20% { opacity: 0.8; filter: blur(4px); }
+  80% { opacity: 0.6; }
+  100% {
+    transform: translateY(-5vh) scale(1.5) rotate(540deg);
+    opacity: 0;
+    filter: blur(2px);
+  }
+}
+
+/* Cascade burst - grand finale explosion */
+@keyframes cascade-burst {
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx), var(--ty)) scale(1);
+    opacity: 0;
+  }
+}
+
+/* Legacy float (kept for compatibility) */
 @keyframes float-up {
   0% {
     transform: translateY(100vh) scale(0.6);
     opacity: 0;
   }
-  10% {
-    opacity: 0.8;
-  }
-  90% {
-    opacity: 0.8;
-  }
+  10% { opacity: 0.8; }
+  90% { opacity: 0.8; }
   100% {
     transform: translateY(-10vh) scale(1.1);
     opacity: 0;
@@ -118,9 +280,7 @@
     transform: translateY(-10vh) rotate(0deg);
     opacity: 0;
   }
-  10% {
-    opacity: 1;
-  }
+  10% { opacity: 1; }
   100% {
     transform: translateY(110vh) rotate(360deg);
     opacity: 0;
@@ -128,82 +288,152 @@
 }
 
 @keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes surface-scroll {
+  from { background-position: 0% 0%; }
+  to { background-position: 200% 0%; }
+}
+
+@keyframes halo-pulse {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 0.95; transform: scale(1.12); }
+}
+
+@keyframes orbit-cw {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes orbit-ccw {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes dash-flow {
+  to { stroke-dashoffset: -100; }
+}
+
+@keyframes path-glow {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes core-breathe {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.18); }
+}
+
+/* Cosmic pulse - for modal backgrounds */
+@keyframes cosmic-pulse {
+  0%, 100% {
+    background-size: 100% 100%;
+    opacity: 0.6;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    background-size: 120% 120%;
+    opacity: 0.8;
   }
 }
 
+/* Trail fade - for connecting paths */
+@keyframes trail-glow {
+  0% { stroke-dashoffset: 1000; opacity: 0; }
+  20% { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0.5; }
+}
+
+/* Modal entrance - cinematic reveal */
+@keyframes modal-entrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) translateY(40px) rotateX(10deg);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0) rotateX(0deg);
+    filter: blur(0);
+  }
+}
+
+/* Image reveal - photo memory */
+@keyframes memory-reveal {
+  0% {
+    opacity: 0;
+    transform: scale(1.1) translateY(10px);
+    filter: blur(8px) saturate(0.5);
+  }
+  50% { filter: blur(4px) saturate(1); }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0) saturate(1);
+  }
+}
+
+/* Text shimmer - for quotes */
+@keyframes quote-shimmer {
+  0%, 100% {
+    background-position: -200% center;
+    opacity: 0.85;
+  }
+  50% {
+    background-position: 200% center;
+    opacity: 1;
+  }
+}
+
+/* Mouse follow glow */
+@keyframes cursor-glow-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.2); opacity: 0.5; }
+}
+
+/* Utility classes */
 .text-glow {
   text-shadow: 0 0 24px oklch(0.78 0.15 350 / 60%);
 }
 
-/* ---- Planet system visuals ---- */
-@keyframes surface-scroll {
-  from {
-    background-position: 0% 0%;
-  }
-  to {
-    background-position: 200% 0%;
-  }
+.text-glow-intense {
+  text-shadow:
+    0 0 20px oklch(0.78 0.15 350 / 80%),
+    0 0 40px oklch(0.78 0.15 350 / 60%),
+    0 0 60px oklch(0.78 0.15 350 / 40%);
 }
 
-@keyframes halo-pulse {
-  0%,
-  100% {
-    opacity: 0.55;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.95;
-    transform: scale(1.12);
-  }
+.animate-heartbeat {
+  animation: heartbeat 1.8s ease-in-out infinite;
 }
 
-@keyframes orbit-cw {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.animate-soulful-float {
+  animation: soulful-float 6s ease-in-out infinite;
 }
 
-@keyframes orbit-ccw {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
+.animate-aurora {
+  animation: aurora-shimmer 15s ease-in-out infinite;
+  background-size: 400% 400%;
 }
 
-@keyframes dash-flow {
-  to {
-    stroke-dashoffset: -100;
-  }
+.animate-cosmic-pulse {
+  animation: cosmic-pulse 8s ease-in-out infinite;
 }
 
-@keyframes path-glow {
-  0%,
-  100% {
-    opacity: 0.35;
-  }
-  50% {
-    opacity: 0.7;
-  }
-}
-
-@keyframes core-breathe {
-  0%,
-  100% {
-    filter: brightness(1);
-  }
-  50% {
-    filter: brightness(1.18);
-  }
+/* Glass card with love-themed border */
+.love-glass {
+  background: linear-gradient(
+    135deg,
+    oklch(0.3 0.05 350 / 35%),
+    oklch(0.18 0.04 300 / 30%)
+  );
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid oklch(0.78 0.15 350 / 25%);
+  box-shadow:
+    0 0 40px -10px oklch(0.78 0.15 350 / 30%),
+    inset 0 1px 0 oklch(0.9 0.05 350 / 20%);
 }
 
 @media (prefers-reduced-motion: reduce) {
