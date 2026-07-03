@@ -31,7 +31,7 @@ export const PLANETS: Planet[] = [
     emoji: '🍫',
     image: '/memories/gift-chocolate.jpg',
     quote:
-      "You didn't just send me chocolate. You sent me a reason to smile.",
+      "You didn't just send me the first gift. You sent me a reason to smile.",
     effect: 'sparkles',
     colors: ['#7a4a24', '#e0b354'],
     glow: '#e0b354',
@@ -63,7 +63,7 @@ export const PLANETS: Planet[] = [
     name: 'Supreme Leader - Wigglepuff',
     emoji: '🚀',
     image: '/memories/wigglypuff.jpg',
-    quote: 'Every love story needs a little chaos.',
+    quote: 'Every love story needs a little chaos youre my calm,chaos and pandaaaa.',
     effect: 'funny',
     colors: ['#ff9ec4', '#7aa8ff'],
     glow: '#ff9ec4',
@@ -74,7 +74,7 @@ export const PLANETS: Planet[] = [
     emoji: '❤️',
     image: '/memories/my-weakness.jpg',
     quote:
-      "Truth or Dare asked me for my weakness. I didn't even have to think. It's always been you.",
+      "Truth or Dare remember?. My weakness.",
     effect: 'hearts',
     colors: ['#8b1e3f', '#ff5470'],
     glow: '#ff5470',
@@ -135,4 +135,4 @@ export const PLANETS: Planet[] = [
   },
 ]
 
-export const PLANET_PASSWORD = '03072025'
+export const PLANET_PASSWORD = '04072025'
